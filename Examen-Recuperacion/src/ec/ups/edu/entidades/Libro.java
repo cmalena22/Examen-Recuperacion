@@ -20,7 +20,7 @@ public class Libro implements Serializable {
 	private String nombre;
 	private String ISBN;
 	private int numpaginas;	
-	@OneToMany(cascade = CascadeType.ALL,mappedBy = "codigoli")	
+	@OneToMany(cascade = CascadeType.ALL,mappedBy = "codigolibro")	
 	private Set<Capitulo>capitulo;
 	
 	private static final long serialVersionUID = 1L;

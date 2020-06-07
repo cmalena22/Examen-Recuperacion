@@ -16,13 +16,15 @@ public class Capitulo implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int codigo;
 	private int numero;
-	private String titulo;		
-	@ManyToOne
-	@JoinColumn
-	private Libro codigoli;
+	private String titulo;
 	@OneToOne
 	@JoinColumn
 	private Autor codigoautor;	
+	@ManyToOne
+	@JoinColumn
+	private Libro codigolibro;
+	
+	
 	
 	private static final long serialVersionUID = 1L;
 
