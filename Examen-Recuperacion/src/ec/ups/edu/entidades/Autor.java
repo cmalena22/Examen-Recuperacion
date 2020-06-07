@@ -17,7 +17,7 @@ public class Autor implements Serializable {
 	private String nombre;
 	private String nacionalidad;
 	private static final long serialVersionUID = 1L;
-	@OneToOne(cascade = CascadeType.PERSIST,mappedBy = "codigoautor")
+	@OneToOne(cascade = CascadeType.ALL,mappedBy = "codigoautor")
 	private Capitulo codigoautor;
 	
 

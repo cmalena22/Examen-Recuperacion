@@ -22,17 +22,20 @@ public class main {
 		libro.setISBN("2132");
 		libro.setNombre("CCCCC");
 		libro.setNumpaginas(11);
-		li.create(libro);
+		//li.create(libro);
+		Libro dos= li.read(1);
+		
 		Autor autor= new Autor();
 		autor.setNacionalidad("Ecuatoriano");
 		autor.setNombre("dfgdfg");
-		au.create(autor);
+		//au.create(autor);
+		Autor d=au.read(1);
 		Capitulo c= new Capitulo();
 		c.setNumero(1);
 		c.setTitulo("Hola");
-		c.setCodigolibro(new Libro("isis","ccc",545));
-		c.setCodigoautor(new Autor("Italiano","jdkfjdkf"));
+		c.setCodigolibro(dos);
+		c.setCodigoautor(d);
 		cap.create(c);
-	}
+	} 
 
 }
