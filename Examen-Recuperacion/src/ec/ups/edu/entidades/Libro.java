@@ -14,8 +14,6 @@ import javax.persistence.*;
 public class Libro implements Serializable {
 
 	
-	private static final long serialVersionUID = 1L;
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int codigo;
@@ -23,9 +21,12 @@ public class Libro implements Serializable {
 	private String ISBN;
 	private int numpaginas;	
 	@OneToMany(cascade = CascadeType.ALL,mappedBy = "codigoli")	
-	private Set<Capitulo>capitulo;	
+	private Set<Capitulo>capitulo;
+	
+	private static final long serialVersionUID = 1L;
 
 	public Libro() {
 		
 	}
+   
 }

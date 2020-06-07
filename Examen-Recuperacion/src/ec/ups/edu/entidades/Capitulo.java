@@ -12,7 +12,6 @@ import javax.persistence.*;
 public class Capitulo implements Serializable {
 
 	
-	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int codigo;
@@ -23,7 +22,10 @@ public class Capitulo implements Serializable {
 	private Libro codigoli;
 	@OneToOne
 	@JoinColumn
-	private Autor codigoautor;
+	private Autor codigoautor;	
+	
+	private static final long serialVersionUID = 1L;
+
 	public Capitulo() {
 		
 	}

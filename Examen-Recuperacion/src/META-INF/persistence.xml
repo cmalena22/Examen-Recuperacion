@@ -5,16 +5,16 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
 	<persistence-unit name="jpa" transaction-type="RESOURCE_LOCAL">
 	<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-		<class>ec.ups.edu.entidades.Autor</class>
-		<class>ec.ups.edu.entidades.Capitulo</class>
-		<class>ec.ups.edu.entidades.Libro</class>
-	<properties>
+	<class>ec.ups.edu.entidades.Autor</class>
+	<class>ec.ups.edu.entidades.Libro</class>
+	<class>ec.ups.edu.entidades.Capitulo</class>
+		<properties>
 		<property name="eclipselink.ddl-generation" value="create-tables"/>
 		<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/jpapractica"/>
 		<property name="javax.persistence.jdbc.user" value="root"/>
 		<property name="javax.persistence.jdbc.password" value="admin"/>
 		<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
 				
-	</properties>
+		</properties>
 	</persistence-unit>
 </persistence>
