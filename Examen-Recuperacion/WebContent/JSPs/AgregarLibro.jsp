@@ -33,7 +33,7 @@
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav">
 				<li class="nav-item active"><a class="nav-link"
-					href="/Examen-Recuperacion/AgregarLibro?accion=Listar">Listar
+					href="/Examen-Recuperacion/ListarLibro?accion=Listar">Listar
 						Libro</a></li>
 				
 
@@ -50,7 +50,7 @@
 		<input type="text" id="nombre"	name="nombre" class="form-control" required="required"  /> <br> 
 		<label
 			for="tipo">ISBN:</label> 
-		<input type="text" id="isbn" name="isb" class="form-control"  />
+		<input type="text" id="isbn" name="isbn" class="form-control"  />
 		<br> 
 		<label for="operadora">Num pagina Libro:</label> 
 		<input type="text" id="num" name="num" class="form-control"/> <br> 
