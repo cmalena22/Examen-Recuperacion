@@ -32,4 +32,81 @@ public class Capitulo implements Serializable {
 		
 	}
 
+	public Capitulo(int numero, String titulo, Autor codigoautor, Libro codigolibro) {
+		super();
+		this.numero = numero;
+		this.titulo = titulo;
+		this.codigoautor = codigoautor;
+		this.codigolibro = codigolibro;
+	}
+
+	public int getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
+	}
+
+	public int getNumero() {
+		return numero;
+	}
+
+	public void setNumero(int numero) {
+		this.numero = numero;
+	}
+
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
+	public Autor getCodigoautor() {
+		return codigoautor;
+	}
+
+	public void setCodigoautor(Autor codigoautor) {
+		this.codigoautor = codigoautor;
+	}
+
+	public Libro getCodigolibro() {
+		return codigolibro;
+	}
+
+	public void setCodigolibro(Libro codigolibro) {
+		this.codigolibro = codigolibro;
+	}
+	
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + codigo;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Capitulo other = (Capitulo) obj;
+		if (codigo != other.codigo)
+			return false;
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "Capitulo [codigo=" + codigo + ", numero=" + numero + ", titulo=" + titulo + ", codigoautor="
+				+ codigoautor + ", codigolibro=" + codigolibro + "]";
+	}
+
 }
