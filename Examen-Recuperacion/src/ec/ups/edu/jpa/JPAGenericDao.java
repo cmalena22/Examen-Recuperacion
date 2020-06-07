@@ -107,7 +107,7 @@ public class  JPAGenericDao<T,ID> implements GenericDao<T, ID> {
 	public Libro retornar(String nombre,String isbn) {
 		Libro libro=new Libro();
 		try {
-			String sql="SELECT l FROM Libro l where l.nombre='"+nombre+"'";
+			String sql="SELECT l FROM Libro l where l.nombre='"+nombre+"' and l.ISBN='"+isbn+"'";
 			Query query = em.createQuery(sql);
 			libro=(Libro) query.getSingleResult();
 			System.out.println("recupere"+libro);	
