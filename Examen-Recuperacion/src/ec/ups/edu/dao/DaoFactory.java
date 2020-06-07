@@ -2,7 +2,7 @@ package ec.ups.edu.dao;
 
 import ec.ups.edu.jpa.JPADaoFactory;
 
-public interface DaoFactory {
+public abstract class DaoFactory {
 	protected static DaoFactory factory= new JPADaoFactory();
 	
 	public static DaoFactory getFactory() {
@@ -11,4 +11,5 @@ public interface DaoFactory {
 	public abstract LibroDao getLibroDao();
 	public abstract CapituloDao getCapituloDao();
 	public abstract AutorDao getAutorDao();
+	
 }
