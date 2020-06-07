@@ -75,12 +75,12 @@ public class AgregarLibro extends HttpServlet {
 		libro.setNumpaginas(numpag);		
 		//daolibro.create(libro);
 		
-		Libro envio =daolibro.retornar(nombre, isbn);
+		System.out.println(daolibro.retornar(nombre, isbn));
 		Autor envioau=daoautor.read(1);
 		System.out.println("Lo que voy enviar");
 		System.out.println(libro.toString());
 		System.out.println("Lo que recupero librooooooo");
-		System.out.println(envio.toString());
+		//System.out.println(envio.toString());
 		
 		System.out.println("Lo que envio autorrrrrrrrrrr");
 		System.out.println(envioau.toString());
