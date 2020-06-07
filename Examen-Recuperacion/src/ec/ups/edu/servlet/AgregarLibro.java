@@ -75,7 +75,7 @@ public class AgregarLibro extends HttpServlet {
 		libro.setNumpaginas(numpag);		
 		daolibro.create(libro);
 		
-		Libro envio =daolibro.retornar(nombre, isbn);
+		Libro envio =daolibro.retornar(request.getParameter("nombre"), request.getParameter("isbn"));
 		Autor envioau=daoautor.read(1);
 		System.out.println("Lo que voy enviar");
 		System.out.println(libro.toString());
