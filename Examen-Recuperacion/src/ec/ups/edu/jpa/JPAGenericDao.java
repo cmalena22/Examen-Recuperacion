@@ -2,11 +2,13 @@ package ec.ups.edu.jpa;
 
 import java.util.List;
 
+
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 
 import ec.ups.edu.dao.GenericDao;
-
+import ec.ups.edu.entidades.Libro;
 public class  JPAGenericDao<T,ID> implements GenericDao<T, ID> {
 	 private Class<T> persistentClass;
 	    protected EntityManager em;
@@ -102,5 +104,19 @@ public class  JPAGenericDao<T,ID> implements GenericDao<T, ID> {
 		return null;
 		
 	    }
+	public Libro retornar(String nombre,String isbn) {
+		Libro libro=new Libro();
+		try {
+			String sql="SELECT l FROM Libro l where l.nombre='"+nombre+"'";
+			Query query = em.createQuery(sql);
+			libro=(Libro) query.getSingleResult();
+			System.out.println("recupere"+libro);	
+		} catch (Exception e) {
+			System.out.println("Usuario no encontrado"+e.getMessage());
+		}
+			
+		return libro;
+		
+	}
 
 }

@@ -12,6 +12,7 @@ public class main {
 		AutorDao au= DaoFactory.getFactory().getAutorDao();
 		CapituloDao cap=DaoFactory.getFactory().getCapituloDao();
 		LibroDao li=DaoFactory.getFactory().getLibroDao();
+	
 		//AutorDao au= DaoFactory.getFactory().getAutorDao();
 		/*Capitulo c= new Capitulo();
 		c.setNumero(1);
@@ -23,19 +24,23 @@ public class main {
 		libro.setNombre("CCCCC");
 		libro.setNumpaginas(11);
 		//li.create(libro);
-		Libro dos= li.read(1);
-		
+	
+		Libro dos= li.read(3);
+		//li.delete(dos);
+		//System.out.println(dos.toString());
 		Autor autor= new Autor();
 		autor.setNacionalidad("Ecuatoriano");
 		autor.setNombre("dfgdfg");
 		//au.create(autor);
-		Autor d=au.read(1);
+		//Autor d=au.read(1);
 		Capitulo c= new Capitulo();
 		c.setNumero(1);
 		c.setTitulo("Hola");
 		c.setCodigolibro(dos);
-		c.setCodigoautor(d);
-		cap.create(c);
+		//c.setCodigoautor(d);
+		//cap.create(c);
+		System.out.println("dkfdfhdf");
+		System.out.println(li.retornar("CCCCC", "2132"));
 	} 
 
 }
