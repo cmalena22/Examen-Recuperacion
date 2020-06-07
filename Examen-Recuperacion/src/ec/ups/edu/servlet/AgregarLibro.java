@@ -77,6 +77,12 @@ public class AgregarLibro extends HttpServlet {
 		
 		Libro envio =daolibro.retornar(request.getParameter("nombre"), request.getParameter("isbn"));
 		Autor envioau=daoautor.read(1);
+		
+		Capitulo capitulo = new Capitulo();
+		capitulo.setCodigoautor(envioau);
+		capitulo.setCodigolibro(envio);
+		capitulo.setNumero(numercap);
+		capitulo.setTitulo(titulocap);
 		System.out.println("Lo que voy enviar");
 		System.out.println(libro.toString());
 		System.out.println("Lo que recupero librooooooo");
@@ -84,6 +90,11 @@ public class AgregarLibro extends HttpServlet {
 		
 		System.out.println("Lo que envio autorrrrrrrrrrr");
 		System.out.println(envioau.toString());
+		
+		System.out.println("Ingreso Capitulos");
+		System.out.println(capitulo);
+		
+		daocap.create(capitulo);
 			//request.setAttribute("telefono", modi);
 			request.getRequestDispatcher("/JSPs/AgregarLibro.jsp").forward(request, response);
 	}

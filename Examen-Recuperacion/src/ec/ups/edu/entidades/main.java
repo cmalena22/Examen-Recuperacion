@@ -25,14 +25,15 @@ public class main {
 		libro.setNumpaginas(11);
 		//li.create(libro);
 	
-		Libro dos= li.read(3);
+		Libro dos= li.read(5);
 		//li.delete(dos);
 		//System.out.println(dos.toString());
 		Autor autor= new Autor();
 		autor.setNacionalidad("Ecuatoriano");
 		autor.setNombre("dfgdfg");
 		//au.create(autor);
-		//Autor d=au.read(1);
+		Autor d=au.read(4);
+		au.delete(d);
 		Capitulo c= new Capitulo();
 		c.setNumero(1);
 		c.setTitulo("Hola");
