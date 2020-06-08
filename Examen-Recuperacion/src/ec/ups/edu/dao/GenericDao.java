@@ -13,4 +13,5 @@ public interface GenericDao <T,ID> {
 	public Libro retornar(String nombre,String isbn);
 	public List<Capitulo>  findbyUserId();
 	public List<Capitulo>  findbyAutor(String nombre);
+	public List<Capitulo>  findbyCapitulo(String titulo);
 }

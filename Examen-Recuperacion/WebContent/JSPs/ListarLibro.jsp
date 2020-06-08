@@ -40,8 +40,13 @@
 					href="/Examen-Recuperacion/ListarLibro?accion=BuscarNombre">Buscar Nombre</a></li>
 			</ul>
 		</div>
-			<form class="form-inline my-2 my-lg-0"	action="/Examen-Recuperacion/BuscarPorNombre" method="post">
-					<input class="form-control mr-sm-2" type="search" placeholder="Cedula" name="buscar" aria-label="Search">
+			<form class="form-inline my-2 my-lg-0"	action="/Examen-Recuperacion/BuscarPorTitulo" method="post">
+					<input class="form-control mr-sm-2" type="search" placeholder="Titulo" name="buscar" aria-label="Search">
+					<button class="btn btn-outline-success my-2 my-sm-0" type="submit" 
+						name="accion" value="Buscar">Buscar</button> <br> <br>
+				</form>
+		<form class="form-inline my-2 my-lg-0"	action="/Examen-Recuperacion/BuscarPorNombre" method="post">
+				 <br> <br>	<input class="form-control mr-sm-2" type="search" placeholder="Autor" name="buscar" aria-label="Search">
 					<button class="btn btn-outline-success my-2 my-sm-0" type="submit"
 						name="accion" value="Buscar">Buscar</button>
 				</form>

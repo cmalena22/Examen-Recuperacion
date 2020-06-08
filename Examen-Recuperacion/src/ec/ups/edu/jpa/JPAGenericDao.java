@@ -99,4 +99,22 @@ public class  JPAGenericDao<T,ID> implements GenericDao<T, ID> {
 		
 		
 	}
+
+	@Override
+	public List<Capitulo> findbyCapitulo(String titulo) {
+		String sql = ("SELECT c FROM Capitulo c where c.titulo='"+titulo+"'");
+		List<Capitulo> list = em.createQuery(sql).getResultList();
+		System.out.println("sdfsdfsd" + list);
+		 for (Capitulo c : list) {
+		    System.out.println("Nombre Libro:"+c.getCodigolibro().getNombre());
+		    System.out.println("ISBN Libro:"+c.getCodigolibro().getISBN());
+		    System.out.println("Numero pagina libro:"+c.getCodigolibro().getNumpaginas());
+		    System.out.println("Capitulo titulo:"+c.getTitulo());
+		    System.out.println("Capitulo numero:"+c.getNumero());
+		    System.out.println("Nombre Autor:"+c.getCodigoautor().getNombre());
+		    System.out.println("Nacionalidad Autor:"+c.getCodigoautor().getNacionalidad());
+		  }
+		
+		return list;
+	}
 }
