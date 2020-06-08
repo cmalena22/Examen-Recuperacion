@@ -76,7 +76,7 @@ public class AgregarLibro extends HttpServlet {
 		daolibro.create(libro);
 		
 		Libro envio =daolibro.retornar(request.getParameter("nombre"), request.getParameter("isbn"));
-		Autor envioau=daoautor.read(1);
+		Autor envioau=daoautor.read("dfgdfg");
 		
 		Capitulo capitulo = new Capitulo();
 		capitulo.setCodigoautor(envioau);

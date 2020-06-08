@@ -1,5 +1,7 @@
 package ec.ups.edu.entidades;
 
+import java.util.List;
+
 import ec.ups.edu.dao.AutorDao;
 import ec.ups.edu.dao.CapituloDao;
 import ec.ups.edu.dao.DaoFactory;
@@ -37,7 +39,7 @@ inner join autor on CODIGOAUTOR_CODIGO=autor.CODIGO;
 		autor.setNacionalidad("Ecuatoriano");
 		autor.setNombre("dfgdfg");
 		//au.create(autor);
-		Autor d=au.read(4);
+		//Autor d=au.read(4);
 		//au.delete(d);
 		Capitulo c= new Capitulo();
 		c.setNumero(1);
@@ -50,8 +52,9 @@ inner join autor on CODIGOAUTOR_CODIGO=autor.CODIGO;
 		//Capitulo capp= cap.read(2);
 	//	cap.delete(capp);
 		System.out.println("Recuperacion");
-		System.out.println(cap.findbyUserId().toString());
+		//List<Capitulo>lista=cap.findbyAutor("dfgdfg");
 		//System.out.println(cap.find());
+		System.out.println(au.read("dfgdfg"));
 	} 
 
 }

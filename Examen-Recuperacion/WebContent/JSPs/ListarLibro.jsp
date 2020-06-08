@@ -39,6 +39,12 @@
 			</ul>
 		</div>
 	</nav>
+	<form class="form-inline my-2 my-lg-0"	action="/Examen-Recuperacion/BuscarPornombre" method="post">
+					<input class="form-control mr-sm-2" type="search" placeholder="Nombre Autor" name="buscar" aria-label="Search">
+					<button class="btn btn-outline-success my-2 my-sm-0" type="submit"
+						name="accion" value="Buscar">Buscar</button>
+					
+	</form>
 	<form action="/Examen-Recuperacion/ListarLibro" method="post">
 		<input class="btn btn-danger btn block" type="submit" name="accion"
 			value="Listar">
@@ -47,7 +53,7 @@
 		<table class="table table-hover">
 			<thead>
 				<tr>
-					<th>Nombre</th>
+					<th>Nombre Libro</th>
 					<th>ISBN</th>
 					<th>Numero Paginas</th>
 					<th>Numero Capitulo</th>
@@ -60,9 +66,13 @@
 				<c:forEach var="cap" items="${capitulo}">
 					<tr>
 						
+						<td>${cap.getCodigolibro().getNombre()}</td>
+						<td>${cap.getCodigolibro().getISBN()}</td>
+						<td>${cap.getCodigolibro().getNumpaginas()}</td>
 						<td>${cap.getNumero()}</td>
 						<td>${cap.getTitulo()}</td>
-					
+						<td>${cap.getCodigoautor().getNombre()}</td>
+						<td>${cap.getCodigoautor().getNacionalidad()}</td>
 
 					</tr>
 
