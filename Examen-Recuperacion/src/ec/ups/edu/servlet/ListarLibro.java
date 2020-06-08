@@ -44,7 +44,7 @@ public class ListarLibro extends HttpServlet {
 			
 			case "Registrar":
 				System.out.println("shdbsdhfbshfbsfh");
-				  response.sendRedirect("/TELEFONOSJPA/JSPs/AgregarLibro.jsp");  
+				  response.sendRedirect("/Examen-Recuperacion/JSPs/AgregarLibro.jsp");  
 				 
 				//request.getRequestDispatcher("../html/index.html").forward(request, response);
 				  break;
@@ -60,10 +60,10 @@ public class ListarLibro extends HttpServlet {
 		protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			// TODO Auto-generated method stub
 		
-		//List<Capitulo>lista=JPADaoFactory.getFactory().getCapituloDao().finallby(cedula);
-		//System.out.println(lista);
-	//	request.setAttribute("telefono", lista);
-		request.getRequestDispatcher("/JSPs/ListarTelefono.jsp").forward(request, response);
+		List<Capitulo>lista=dao.findbyUserId();
+		System.out.println(lista.toString());
+		request.setAttribute("telefono", lista);
+		request.getRequestDispatcher("/JSPs/ListarLibro.jsp").forward(request, response);
 		
 		}
 }
