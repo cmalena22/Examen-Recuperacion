@@ -7,7 +7,10 @@ import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
+import ec.ups.edu.dao.CapituloDao;
+import ec.ups.edu.dao.DaoFactory;
 import ec.ups.edu.dao.GenericDao;
+import ec.ups.edu.entidades.Capitulo;
 import ec.ups.edu.entidades.Libro;
 public class  JPAGenericDao<T,ID> implements GenericDao<T, ID> {
 	 private Class<T> persistentClass;
@@ -118,5 +121,19 @@ public class  JPAGenericDao<T,ID> implements GenericDao<T, ID> {
 		return libro;
 		
 	}
-
+	
+	public List<Capitulo>  findbyUserId() {
+		
+		CapituloDao dao= DaoFactory.getFactory().getCapituloDao();	
+		
+		//Capitulo usu=dao.read(cedula);
+		String sql=("select libro.codigo,libro.nombre,libro.isbn,libro.NUMPAGINAS,capitulo.numero,capitulo.titulo,autor.nombre,autor.codigo,autor.NACIONALIDAD from capitulo\r\n" + 
+				"		inner join libro on CODIGOLIBRO_CODIGO=libro.CODIGO" + 
+				"		inner join autor on CODIGOAUTOR_CODIGO=autor.CODIGO");	
+		List<Capitulo> list=em.createQuery(sql).getResultList();
+							
+		return list;
+	
+		
+	}
 }

@@ -27,7 +27,6 @@
 </nav>
 <form action="/Examen-Recuperacion/ListTelefonoServlet"  method="post">
  <input class="btn btn-danger btn block" type="submit" name="accion" value="Listar"> 
- <input id="cedula" name="cedula" type="hidden" value="${nombre}">
  </form>
  	<div >
  		<table class="table table-hover">
