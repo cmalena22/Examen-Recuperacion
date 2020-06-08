@@ -118,7 +118,7 @@ public class  JPAGenericDao<T,ID> implements GenericDao<T, ID> {
 	}
 	@SuppressWarnings("unchecked")
 	public List<Capitulo>  findbyUserId() {	
-		em.getTransaction().begin();
+		
 		String sql = ("SELECT c.codigolibro.nombre,c.codigolibro.ISBN,c.codigolibro.numpaginas,c.codigoautor.nombre,c.codigoautor.nacionalidad,c.numero,c.titulo FROM Capitulo c");
 		List<Capitulo> list = em.createQuery(sql).getResultList();
 		System.out.println("sdfsdfsd" + list);

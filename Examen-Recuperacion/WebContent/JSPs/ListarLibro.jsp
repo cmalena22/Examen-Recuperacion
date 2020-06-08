@@ -59,9 +59,7 @@
 			<tbody>
 				<c:forEach var="tel" items="${telefono}">
 					<tr>
-						<td>${tel.codigolibro.nombre}</td>
-						<td>${tel.codigolibro.ISBN}</td>
-						<td>${tel.codigolibro.numpaginas}</td>
+						
 						<td>${tel.numero()}</td>
 						<td>${tel.titulo()}</td>
 						<td>${tel.codigoautor.nombre}</td>
