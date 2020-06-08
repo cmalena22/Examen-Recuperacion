@@ -1,5 +1,6 @@
 package ec.ups.edu.jpa;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -85,16 +86,10 @@ public class  JPAGenericDao<T,ID> implements GenericDao<T, ID> {
 	    @Override
 	    public List<T> find() {
 		em.getTransaction().begin();
-		List<T> lista = null;
-		try {
+		List<T> lista = null;		
 		    javax.persistence.criteria.CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
-		    cq.select(cq.from(persistentClass));
-		    lista = em.createQuery(cq).getResultList();
-		    em.getTransaction().commit();
-		} catch (Exception e) {
-		    e.printStackTrace();
-		}
-		return lista;
+		    cq.select(cq.from(persistentClass));		    
+			return em.createQuery(cq).getResultList();
 	    }
 	@Override
 	public List<T> find(String[] attributes, String[] values) {
@@ -122,16 +117,14 @@ public class  JPAGenericDao<T,ID> implements GenericDao<T, ID> {
 		
 	}
 	
-	public List<Capitulo>  findbyUserId() {
-		
-		CapituloDao dao= DaoFactory.getFactory().getCapituloDao();	
-		
-		//Capitulo usu=dao.read(cedula);
-		String sql=("select c from Capitulo c ");	
-		List<Capitulo> list=em.createQuery(sql).getResultList();
-							
+	public List<Capitulo>  findbyUserId() {	
+			em.getTransaction().begin();			
+			String sql=("SELECT c.titulo,c.codigolibro.codigo FROM Capitulo c");	
+			List<Capitulo> list =em.createQuery(sql).getResultList();
+			System.out.println("sdfsdfsd"+list);
+			em.getTransaction().commit();		
 		return list;
-	
+				
 		
 	}
 }

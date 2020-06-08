@@ -99,8 +99,10 @@ public class Autor implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Autor [codigo=" + codigo + ", nombre=" + nombre + ", nacionalidad=" + nacionalidad + ", codigoautor="
-				+ codigoautor + "]";
+		return "Autor [codigo=" + codigo + ", nombre=" + nombre + ", nacionalidad=" + nacionalidad + "]";
 	}
+
+
+	
    
 }
