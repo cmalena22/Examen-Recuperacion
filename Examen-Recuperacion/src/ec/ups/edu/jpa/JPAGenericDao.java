@@ -82,10 +82,7 @@ public class  JPAGenericDao<T,ID> implements GenericDao<T, ID> {
 	
 	@SuppressWarnings("unchecked")
 	public List<Capitulo>  findbyAutor(String nombre) {	
-		AutorDao dao= DaoFactory.getFactory().getAutorDao();	
-		Autor autor=dao.read(nombre);
-		
-		String sql = ("SELECT c FROM Capitulo c where t.codigoautor.nombre='"+autor.getNombre()+"'");
+		String sql = ("SELECT a FROM Autor a ");
 		List<Capitulo> list = em.createQuery(sql).getResultList();
 		System.out.println("sdfsdfsd" + list);
 		 for (Capitulo c : list) {
