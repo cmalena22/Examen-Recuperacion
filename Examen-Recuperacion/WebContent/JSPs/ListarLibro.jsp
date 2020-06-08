@@ -57,13 +57,12 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="tel" items="${telefono}">
+				<c:forEach var="cap" items="${capitulo}">
 					<tr>
 						
-						<td>${tel.numero()}</td>
-						<td>${tel.titulo()}</td>
-						<td>${tel.codigoautor.nombre}</td>
-						<td>${tel.codigoautor.nacionalidad}</td>
+						<td>${cap.getNumero()}</td>
+						<td>${cap.getTitulo()}</td>
+					
 
 					</tr>
 

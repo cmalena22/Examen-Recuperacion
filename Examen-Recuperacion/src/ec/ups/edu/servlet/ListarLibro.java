@@ -62,7 +62,7 @@ public class ListarLibro extends HttpServlet {
 		
 		List<Capitulo>lista=dao.findbyUserId();
 		System.out.println(lista.toString());
-		request.setAttribute("telefono", lista);
+		request.setAttribute("capitulo", lista);
 		request.getRequestDispatcher("/JSPs/ListarLibro.jsp").forward(request, response);
 		
 		}
