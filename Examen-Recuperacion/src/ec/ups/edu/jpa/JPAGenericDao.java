@@ -127,9 +127,7 @@ public class  JPAGenericDao<T,ID> implements GenericDao<T, ID> {
 		CapituloDao dao= DaoFactory.getFactory().getCapituloDao();	
 		
 		//Capitulo usu=dao.read(cedula);
-		String sql=("select libro.codigo,libro.nombre,libro.isbn,libro.NUMPAGINAS,capitulo.numero,capitulo.titulo,autor.nombre,autor.codigo,autor.NACIONALIDAD from capitulo\r\n" + 
-				"		inner join libro on CODIGOLIBRO_CODIGO=libro.CODIGO" + 
-				"		inner join autor on CODIGOAUTOR_CODIGO=autor.CODIGO");	
+		String sql=("select c from Capitulo c ");	
 		List<Capitulo> list=em.createQuery(sql).getResultList();
 							
 		return list;

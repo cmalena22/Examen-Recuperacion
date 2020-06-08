@@ -47,8 +47,10 @@ inner join autor on CODIGOAUTOR_CODIGO=autor.CODIGO;
 		//cap.create(c);
 		System.out.println("dkfdfhdf");
 		System.out.println(li.retornar("CCCCC", "2132"));
-		Capitulo capp= cap.read(2);
-		cap.delete(capp);
+		//Capitulo capp= cap.read(2);
+	//	cap.delete(capp);
+		System.out.println("Recuperacion");
+		System.out.println(cap.findbyUserId());
 	} 
 
 }
