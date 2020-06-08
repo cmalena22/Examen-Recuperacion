@@ -2,6 +2,7 @@ package ec.ups.edu.dao;
 
 import java.util.List;
 
+import ec.ups.edu.entidades.Autor;
 import ec.ups.edu.entidades.Capitulo;
 import ec.ups.edu.entidades.Libro;
 

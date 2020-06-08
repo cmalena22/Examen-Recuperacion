@@ -52,9 +52,13 @@ inner join autor on CODIGOAUTOR_CODIGO=autor.CODIGO;
 		//Capitulo capp= cap.read(2);
 	//	cap.delete(capp);
 		System.out.println("Recuperacion");
-		//List<Capitulo>lista=cap.findbyAutor("dfgdfg");
-		//System.out.println(cap.find());
-		System.out.println(au.read("dfgdfg"));
+		//System.out.println(au.findbyAutor("dfgdfg"));
+		List<Capitulo>lista=au.findbyAutor("dfgdfg");
+		System.out.println(lista);
+		Autor autor2= new Autor();
+		autor2.setNacionalidad("Ecuatoriano");
+		autor2.setNombre("Cinthia");
+		au.create(autor2);
 	} 
 
 }

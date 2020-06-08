@@ -72,17 +72,13 @@ public class Autor implements Serializable {
 		this.codigoautor = codigoautor;
 	}
 
-
-
-
 	
-
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
+		result = prime * result + codigo;
 		return result;
 	}
 
@@ -96,10 +92,7 @@ public class Autor implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Autor other = (Autor) obj;
-		if (nombre == null) {
-			if (other.nombre != null)
-				return false;
-		} else if (!nombre.equals(other.nombre))
+		if (codigo != other.codigo)
 			return false;
 		return true;
 	}

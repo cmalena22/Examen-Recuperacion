@@ -49,6 +49,11 @@ public class AgregarLibro extends HttpServlet {
 			  response.sendRedirect("/Examen-Recuperacion/JSPs/ListarLibro.jsp");  
 			//request.getRequestDispatcher("../html/index.html").forward(request, response);
 			  break;
+		case "BuscarAutor":
+			System.out.println("shdbsdhfbshfbsfh");
+			  response.sendRedirect("/Examen-Recuperacion/JSPs/BuscarNombreAutor.jsp");  
+			//request.getRequestDispatcher("../html/index.html").forward(request, response);
+			  break;
 		
 		default:
 			  break;
@@ -76,7 +81,7 @@ public class AgregarLibro extends HttpServlet {
 		daolibro.create(libro);
 		
 		Libro envio =daolibro.retornar(request.getParameter("nombre"), request.getParameter("isbn"));
-		Autor envioau=daoautor.read("dfgdfg");
+		Autor envioau=daoautor.read(5);
 		
 		Capitulo capitulo = new Capitulo();
 		capitulo.setCodigoautor(envioau);

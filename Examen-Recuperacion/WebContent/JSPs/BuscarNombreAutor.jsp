@@ -34,22 +34,20 @@
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav">
 				<li class="nav-item active"><a class="nav-link"
-					href="/Examen-Recuperacion/ListarLibro?accion=Registrar">Insertar
-						Libro</a></li>
-				<li class="nav-item active"><a class="nav-link"
-					href="/Examen-Recuperacion/ListarLibro?accion=BuscarNombre">Buscar Nombre</a></li>
+					href="/Examen-Recuperacion/BuscarPorNombre?accion=Registrar">Insertar Libro</a>
+				</li>
+					<li class="nav-item active"><a class="nav-link"
+					href="/Examen-Recuperacion/BuscarPorNombre?accion=Listar">Listar Libro</a>
+				</li>
 			</ul>
 		</div>
-			<form class="form-inline my-2 my-lg-0"	action="/Examen-Recuperacion/BuscarPorNombre" method="post">
+		<form class="form-inline my-2 my-lg-0"	action="/Examen-Recuperacion/BuscarPorNombre" method="post">
 					<input class="form-control mr-sm-2" type="search" placeholder="Cedula" name="buscar" aria-label="Search">
 					<button class="btn btn-outline-success my-2 my-sm-0" type="submit"
 						name="accion" value="Buscar">Buscar</button>
 				</form>
 	</nav>
-		<form action="/Examen-Recuperacion/ListarLibro" method="post">
-		<input class="btn btn-danger btn block" type="submit" name="accion"
-			value="Listar">
-	</form>
+	
 	<div>
 		<table class="table table-hover">
 			<thead>
@@ -64,16 +62,16 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="cap" items="${capitulo}">
+				<c:forEach var="c" items="${autor}">
 					<tr>
 						
-						<td>${cap.getCodigolibro().getNombre()}</td>
-						<td>${cap.getCodigolibro().getISBN()}</td>
-						<td>${cap.getCodigolibro().getNumpaginas()}</td>
-						<td>${cap.getNumero()}</td>
-						<td>${cap.getTitulo()}</td>
-						<td>${cap.getCodigoautor().getNombre()}</td>
-						<td>${cap.getCodigoautor().getNacionalidad()}</td>
+						<td>${c.getCodigoautor().getCodigolibro().getNombre()}</td>
+						<td>${c.getCodigoautor().getCodigolibro().getISBN()}</td>
+						<td>${c.getCodigoautor().getCodigolibro().getNumpaginas()}</td>
+						<td>${c.getCodigoautor().getTitulo()}</td>
+						<td>${c.getCodigoautor().getNumero()}</td>
+						<td>${c.getNombre()}</td>
+						<td>${c.getNacionalidad()}</td>
 
 					</tr>
 

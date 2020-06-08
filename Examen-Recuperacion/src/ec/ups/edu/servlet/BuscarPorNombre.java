@@ -40,9 +40,14 @@ public class BuscarPorNombre extends HttpServlet {
 			System.out.println("shdbsdhfbshfbsfh");
 			  response.sendRedirect("/Examen-Recuperacion/JSPs/ListarLibro.jsp");  
 		}
+		if (accion.equalsIgnoreCase("Registrar")) {
+			System.out.println("shdbsdhfbshfbsfh");
+			  response.sendRedirect("/Examen-Recuperacion/JSPs/AgregarLibro.jsp");  
+		}
 				
 		
 	}
+
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
@@ -56,18 +61,15 @@ public class BuscarPorNombre extends HttpServlet {
 		String dato=request.getParameter("buscar");
 		
 		try {
+			
+		 
 			List<Capitulo>lista=dao.findbyAutor(dato);
-			request.setAttribute("telefono", lista);
-			request.getRequestDispatcher("/JSPs/Publicca.jsp").forward(request, response);	
+			request.setAttribute("capitulo", lista);
+			request.getRequestDispatcher("/JSPs/ListarLibro.jsp").forward(request, response);	
 		} catch (Exception e) {
-			request.getRequestDispatcher("/JSPs/Publicca.jsp").forward(request, response);			
+			request.getRequestDispatcher("/JSPs/ListarLibro.jsp").forward(request, response);			
 			
 		
-		}
-					
-					
-			
-		
+		}					
 	}
-
 }

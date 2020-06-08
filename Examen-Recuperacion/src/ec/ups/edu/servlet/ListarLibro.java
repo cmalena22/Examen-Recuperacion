@@ -48,6 +48,12 @@ public class ListarLibro extends HttpServlet {
 				 
 				//request.getRequestDispatcher("../html/index.html").forward(request, response);
 				  break;
+			case "BuscarNombre":
+				System.out.println("shdbsdhfbshfbsfh");
+				  response.sendRedirect("/Examen-Recuperacion/JSPs/BuscarNombreAutor.jsp");  
+				 
+				//request.getRequestDispatcher("../html/index.html").forward(request, response);
+				  break;
 			default:
 				  break;
 				
