@@ -50,7 +50,7 @@ inner join autor on CODIGOAUTOR_CODIGO=autor.CODIGO;
 		//Capitulo capp= cap.read(2);
 	//	cap.delete(capp);
 		System.out.println("Recuperacion");
-		System.out.println(cap.findbyUserId());
+		System.out.println(cap.findbyUserId().toString());
 		//System.out.println(cap.find());
 	} 
 
