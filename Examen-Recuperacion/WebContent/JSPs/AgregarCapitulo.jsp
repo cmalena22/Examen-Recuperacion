@@ -39,7 +39,7 @@
 		role="form">
 		<div class="form-group">
 		 
- 		
+ 	
  		<label for="operadora">Numero Capitulo:</label> 
 		<input type="text" id="capitulo" name="capitulo" class="form-control"/> <br> 
  		

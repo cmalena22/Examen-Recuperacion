@@ -79,7 +79,7 @@
 						<td>${cap.getTitulo()}</td>
 						<td>${cap.getCodigoautor().getNombre()}</td>
 						<td>${cap.getCodigoautor().getNacionalidad()}</td>
-						<td><a href="/Examen-Recuperacion/JSPs/AgregarCapitulo.jsp?codigo=${cap.getCodigolibro().getCodigo()}&autor=${cap.getCodigoautor().getCodigo()}" >Si?</a></td>
+						<td><a href="/Examen-Recuperacion/JSPs/AgregarCapitulo.jsp?codigolibro=${cap.getCodigolibro().getCodigo()}& autorlibro=${cap.getCodigoautor().getCodigo()}" >Si?</a></td>
 						</tr>
 
 				</c:forEach>

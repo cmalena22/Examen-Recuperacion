@@ -40,8 +40,9 @@ public class AgregarCapitulo extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
-				
+		String codigoli=request.getParameter("codigo");
+		System.out.println("paaaaaaaaaaaaaaaaaaaa");
+				System.out.println(codigoli);
 	}
 
 	/**
@@ -49,8 +50,15 @@ public class AgregarCapitulo extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
-		/*//JDBCPersonaDAO dd= new JDBCPersonaDAO();
-		Capitulo cap= new Capitulo();
+		//JDBCPersonaDAO dd= new JDBCPersonaDAO();
+		String numero=request.getParameter("capitulo");
+		String titulo=request.getParameter("titulo");
+		int codigoli=Integer.valueOf(request.getParameter("codigolibro"));
+		System.out.println("kdjskdjfskjdfksjdfhkjsfsknv");
+		System.out.println(codigoli);
+		System.out.println(numero);
+		System.out.println(titulo);
+		/*Capitulo cap= new Capitulo();
 		String nombre=request.getParameter("nombre");
 		String isbn=request.getParameter("isbn");
 		int numpag=Integer.valueOf(request.getParameter("num"));
@@ -83,6 +91,6 @@ public class AgregarCapitulo extends HttpServlet {
 		
 		daocap.create(capitulo);
 			//request.setAttribute("telefono", modi);*/
-			request.getRequestDispatcher("/JSPs/ListarLibro.jsp").forward(request, response);
+		request.getRequestDispatcher("/JSPs/ListarLibro.jsp").forward(request, response);
 	}
 }
