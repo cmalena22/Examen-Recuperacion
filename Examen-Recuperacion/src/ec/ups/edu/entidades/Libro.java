@@ -18,6 +18,7 @@ public class Libro implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int codigo;
 	private String nombre;
+	 @Column(name="ISBN", unique=true)
 	private String ISBN;
 	private int numpaginas;	
 	@OneToMany(cascade = CascadeType.ALL,mappedBy = "codigolibro")	

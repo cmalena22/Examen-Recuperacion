@@ -53,7 +53,7 @@ public class AgregarCapitulo extends HttpServlet {
 		//JDBCPersonaDAO dd= new JDBCPersonaDAO();
 		String numero=request.getParameter("capitulo");
 		String titulo=request.getParameter("titulo");
-		int codigoli=Integer.valueOf(request.getParameter("codigolibro"));
+		String codigoli=request.getParameter("codigolibro");
 		System.out.println("kdjskdjfskjdfksjdfhkjsfsknv");
 		System.out.println(codigoli);
 		System.out.println(numero);
