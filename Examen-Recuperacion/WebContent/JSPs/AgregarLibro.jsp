@@ -35,10 +35,7 @@
 				<li class="nav-item active"><a class="nav-link"
 					href="/Examen-Recuperacion/AgregarLibro?accion=Listar">Listar
 						Libro</a></li>		
-			<li class="nav-item active"><a class="nav-link"
-					href="/Examen-Recuperacion/AgregarLibro?accion=BuscarAutor">Buscar por nombre Autor
-						Libro</a></li>		
-
+			
 			</ul>
 			</div>
 	</nav>

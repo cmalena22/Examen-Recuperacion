@@ -36,9 +36,7 @@
 				<li class="nav-item active"><a class="nav-link"
 					href="/Examen-Recuperacion/ListarLibro?accion=Registrar">Insertar
 						Libro</a></li>
-				<li class="nav-item active"><a class="nav-link"
-					href="/Examen-Recuperacion/ListarLibro?accion=BuscarNombre">Buscar Nombre</a></li>
-			</ul>
+					</ul>
 		</div>
 			<form class="form-inline my-2 my-lg-0"	action="/Examen-Recuperacion/BuscarPorTitulo" method="post">
 					<input class="form-control mr-sm-2" type="search" placeholder="Titulo" name="buscar" aria-label="Search">

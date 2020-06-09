@@ -38,13 +38,13 @@
 	<form action="/Examen-Recuperacion/AgregarCap" method="post"
 		role="form">
 		<div class="form-group">
-		   Hello <b><% String cod= request.getParameter("codigolibro"); %></b>!
-     Hello <b><%=  cod %></b>!
-        Hello <b><% String au= request.getParameter("autorlibro"); %></b>!
-     Hello <b><%=  au %></b>!
+		   <b><% String cod= request.getParameter("codigolibro"); %></b>!
+ 
+        <b><% String au= request.getParameter("autorlibro"); %></b>!
+  
     <input type="hidden" name="cod" value=<%=  cod %>>
     <input type="hidden" name="au" value=<%=  au %>>
-    
+     
     
  	<label for="operadora">Numero Capitulo:</label> 
 		<input type="text" id="capitulo" name="capitulo" class="form-control"/> <br> 
