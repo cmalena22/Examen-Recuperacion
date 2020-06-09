@@ -1,5 +1,6 @@
 package ec.ups.edu.servlet;
 
+import java.awt.print.Printable;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,11 +17,12 @@ import ec.ups.edu.entidades.Capitulo;
 import ec.ups.edu.entidades.Libro;
 
 /**
- * Servlet implementation class AgregarCapitulo
+ * Servlet implementation class AgregarCap
  */
-@WebServlet("/AgregarCapitulo")
-public class AgregarCapitulo extends HttpServlet {
+@WebServlet("/AgregarCap")
+public class AgregarCap extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+       
 	LibroDao daolibro = DaoFactory.getFactory().getLibroDao();
 	CapituloDao daocap= DaoFactory.getFactory().getCapituloDao();
 	AutorDao daoautor=DaoFactory.getFactory().getAutorDao();
@@ -30,7 +32,7 @@ public class AgregarCapitulo extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AgregarCapitulo() {
+    public AgregarCap() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -40,9 +42,25 @@ public class AgregarCapitulo extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String codigoli=request.getParameter("codigo");
-		System.out.println("paaaaaaaaaaaaaaaaaaaa");
-				System.out.println(codigoli);
+		
+		String accion=request.getParameter("accion");
+		switch (accion) {		
+		case "Listar":
+			System.out.println("shdbsdhfbshfbsfh");
+			  response.sendRedirect("/Examen-Recuperacion/JSPs/ListarLibro.jsp");  
+			//request.getRequestDispatcher("../html/index.html").forward(request, response);
+			  break;
+		case "BuscarAutor":
+			System.out.println("shdbsdhfbshfbsfh");
+			  response.sendRedirect("/Examen-Recuperacion/JSPs/BuscarNombreAutor.jsp");  
+			//request.getRequestDispatcher("../html/index.html").forward(request, response);
+			  break;
+		
+		default:
+			  break;
+			
+		}
+		
 	}
 
 	/**
@@ -51,13 +69,6 @@ public class AgregarCapitulo extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		//JDBCPersonaDAO dd= new JDBCPersonaDAO();
-		String numero=request.getParameter("capitulo");
-		String titulo=request.getParameter("titulo");
-		String codigoli=request.getParameter("codigolibro");
-		System.out.println("kdjskdjfskjdfksjdfhkjsfsknv");
-		System.out.println(codigoli);
-		System.out.println(numero);
-		System.out.println(titulo);
 		/*Capitulo cap= new Capitulo();
 		String nombre=request.getParameter("nombre");
 		String isbn=request.getParameter("isbn");
@@ -91,6 +102,30 @@ public class AgregarCapitulo extends HttpServlet {
 		
 		daocap.create(capitulo);
 			//request.setAttribute("telefono", modi);*/
-		request.getRequestDispatcher("/JSPs/ListarLibro.jsp").forward(request, response);
+		int cod=Integer.valueOf(request.getParameter("cod"));
+		System.out.println(cod);
+		Libro lib=daolibro.read(cod);
+		System.out.println("Libro recuperado");
+		System.out.println(lib.toString());
+		
+		int autos=Integer.valueOf(request.getParameter("au"));
+		System.out.println(autos);
+		Autor autor1=daoautor.read(autos);
+		System.out.println("Autorr recuperado");
+		System.out.println(autor1.toString());
+		
+		int numero=Integer.valueOf(request.getParameter("capitulo"));
+		String titulo=request.getParameter("titulo");
+		Capitulo capitulo =new Capitulo();
+		capitulo.setCodigoautor(autor1);
+		capitulo.setCodigolibro(lib);
+		capitulo.setNumero(numero);
+		capitulo.setTitulo(titulo);
+		System.out.println("Voy a ingresaar");
+		System.out.println(capitulo.toString());
+		daocap.create(capitulo);
+			request.getRequestDispatcher("/JSPs/ListarLibro.jsp").forward(request, response);
 	}
+
+
 }

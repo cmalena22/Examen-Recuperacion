@@ -1,6 +1,7 @@
 package ec.ups.edu.entidades;
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.*;
@@ -12,8 +13,6 @@ import javax.persistence.*;
 @Entity
 
 public class Libro implements Serializable {
-
-	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int codigo;
@@ -35,7 +34,7 @@ public class Libro implements Serializable {
 		this.nombre = nombre;
 		ISBN = iSBN;
 		this.numpaginas = numpaginas;
-		//this.capitulo = capitulo;
+		capitulo = new HashSet<>();
 	}
 
 	public int getCodigo() {
@@ -77,6 +76,9 @@ public class Libro implements Serializable {
 	public void setCapitulo(Set<Capitulo> capitulo) {
 		this.capitulo = capitulo;
 	}
+	 public void addCap(Capitulo cap) {
+			this.capitulo.add(cap);
+		    }
 
 	@Override
 	public int hashCode() {
@@ -106,6 +108,4 @@ public class Libro implements Serializable {
 				+ ", capitulo=" + capitulo + "]";
 	}
 
-	
-   
 }

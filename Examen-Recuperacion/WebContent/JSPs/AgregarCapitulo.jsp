@@ -35,12 +35,18 @@
 	<br>
 	<div class="container col-lg-3">
 	<h1>Formulario</h1>
-	<form action="/Examen-Recuperacion/AgregarCapitulo" method="post"
+	<form action="/Examen-Recuperacion/AgregarCap" method="post"
 		role="form">
 		<div class="form-group">
-		 
- 	
- 		<label for="operadora">Numero Capitulo:</label> 
+		   Hello <b><% String cod= request.getParameter("codigolibro"); %></b>!
+     Hello <b><%=  cod %></b>!
+        Hello <b><% String au= request.getParameter("autorlibro"); %></b>!
+     Hello <b><%=  au %></b>!
+    <input type="hidden" name="cod" value=<%=  cod %>>
+    <input type="hidden" name="au" value=<%=  au %>>
+    
+    
+ 	<label for="operadora">Numero Capitulo:</label> 
 		<input type="text" id="capitulo" name="capitulo" class="form-control"/> <br> 
  		
  		<label for="operadora">Titulo:</label> 

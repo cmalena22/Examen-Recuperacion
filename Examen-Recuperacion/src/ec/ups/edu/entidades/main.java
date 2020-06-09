@@ -22,8 +22,8 @@ public class main {
 		c.setCodigoautor(new Autor("Luis","Ecuatoriano",c));
 		cap.create(c);*/
 		Libro libro =  new Libro();
-		libro.setISBN("2132");
-		libro.setNombre("CCCCC");
+		libro.setISBN("88");
+		libro.setNombre("C");
 		libro.setNumpaginas(11);
 		//li.create(libro);
 		/**
@@ -45,20 +45,26 @@ inner join autor on CODIGOAUTOR_CODIGO=autor.CODIGO;
 		c.setNumero(1);
 		c.setTitulo("Hola");
 		c.setCodigolibro(dos);
+		
+		
+		//libro.addCap(cap);
+		li.create(libro);
+		
 		//c.setCodigoautor(d);
 		//cap.create(c);
 	//	System.out.println("dkfdfhdf");
 		//System.out.println(li.retornar("CCCCC", "2132"));
 		//Capitulo capp= cap.read(2);
 	//	cap.delete(capp);
-		System.out.println("Recuperacion");
+		/*System.out.println("Recuperacion");
 		//System.out.println(au.findbyAutor("dfgdfg"));
 		List<Capitulo>lista=cap.findbyCapitulo("Ecuaciones");
 		System.out.println(lista);
 		Autor autor2= new Autor();
 		autor2.setNacionalidad("Ecuatoriano");
 		autor2.setNombre("Cinthia");
-		//au.create(autor2);
+		//au.create(autor2);*/
+		
 	} 
 
 }
